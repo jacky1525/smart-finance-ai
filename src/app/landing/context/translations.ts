@@ -1,0 +1,387 @@
+
+export const translations = {
+  en: {
+    nav: {
+      features: "Features",
+      performance: "Performance",
+      insights: "AI Insights",
+      login: "Login",
+      getStarted: "Get Started"
+    },
+    hero: {
+      badge: "AI-Powered Finance v2.0",
+      headline: "Master Your Money with",
+      headlineAccent: "AI Intelligence",
+      subheadline: "Automate expense tracking, receive real-time financial forecasting, and optimize your wealth with the world's most advanced AI budget engine.",
+      ctaPrimary: "Start Building Wealth",
+      ctaSecondary: "View Live Demo",
+      rating: "4.9/5 Rating",
+      trusted: "Trusted by 50,000+ users"
+    },
+    wizard: {
+      stepOf: "Step {current}",
+      next: "Next",
+      back: "Back",
+      finish: "Go to Dashboard",
+      quit: "Quit",
+      step1: {
+        title: "What's your primary ambition?",
+        goal1: "Save for a Big Purchase",
+        goal1Desc: "House, Car, or Travel",
+        goal2: "Grow My Wealth",
+        goal2Desc: "Investing & Portfolio",
+        goal3: "Manage Debt",
+        goal3Desc: "Budgeting & Savings"
+      },
+      step2: {
+        title: "Individual Profile",
+        age: "Your Age",
+        employment: "Employment Status",
+        empOptions: ["Employed", "Freelance", "Student", "Business Owner", "Retired"],
+        income: "Your Annual Income",
+      },
+      step3: {
+        title: "Household & Family",
+        marital: "Marital Status",
+        married: "Married / Partnered",
+        single: "Single",
+        spouseWork: "Is your partner employed?",
+        spouseIncome: "Partner's Annual Income",
+        yes: "Yes",
+        no: "No"
+      },
+      step4: {
+        title: "Wealth & Assets",
+        savings: "Total Liquid Savings",
+        assets: "What assets do you currently hold?",
+        assetOptions: ["Cash", "Stocks", "Crypto", "Gold/Precious Metals", "Real Estate", "Bonds"],
+      },
+      step5: {
+        title: "AI & Risk Profile",
+        aiExp: "Experience with AI tools?",
+        aiOptions: ["Newbie", "Familiar", "Expert"],
+        risk: "Financial Risk Appetite",
+        riskOptions: ["Conservative", "Moderate", "Aggressive"]
+      },
+      step6: {
+        title: "Secure your account.",
+        name: "Full Name",
+        email: "Email Address",
+        password: "Password",
+        socialOr: "or sign up with",
+        google: "Google",
+        apple: "Apple"
+      },
+      success: {
+        title: "Account Created Successfully!",
+        sub: "Your AI is processing your financial DNA. Taking you to your dashboard...",
+      },
+      validationErrors: {
+        goal: "Please select a financial goal",
+        employment: "Please select your employment status",
+        aiExp: "Please select your AI experience level",
+        risk: "Please select your risk appetite"
+      }
+    },
+    features: {
+      sectionTitle: "Intelligence in Every Transaction",
+      sectionSub: "Experience financial management that thinks as fast as you do. Powered by Gemini, driven by your goals.",
+      f1Title: "AI Financial Insights",
+      f1Desc: "Our proprietary model analyzes your spending patterns and provides real-time optimization strategies.",
+      f2Title: "Smart Budgeting",
+      f2Desc: "Set goals and let AI adjust your daily allowances dynamically.",
+      f3Title: "Predictive Forecasting",
+      f3Desc: "See your net worth 12 months into the future with 98% accuracy.",
+      f4Title: "Bank-Grade Security",
+      f4Desc: "256-bit encryption and multi-factor biometric authentication.",
+      f5Title: "Global Connectivity",
+      f5Desc: "Link 20,000+ financial institutions across 150 countries instantly."
+    },
+    stats: {
+      badge: "Activity",
+      title: "Watch Your Savings",
+      titleAccent: "Grow Automatically",
+      desc: "SmartFinance AI identifies micro-saving opportunities daily. Our users save an average of $450/month without changing their lifestyle.",
+      avgRoi: "Avg. ROI",
+      users: "Users",
+      chartTitle: "Projected Growth vs Current Spending",
+      spending: "Spending",
+      savings: "Savings"
+    },
+    ai: {
+      badge: "Experience the Intelligence",
+      title: "Talk to Your Finance Advisor",
+      sub: "Try asking about budgeting, investment strategies, or saving for big goals.",
+      placeholder: "e.g. How can I save more for a house deposit?",
+      another: "Ask another question",
+      magic: "Enter a query below to see AI magic",
+      error: "Our AI advisor is currently busy. Please try again.",
+      tags: ["Budget for a wedding", "Investing $1,000", "Retirement in 20 years", "Tax optimization"],
+      systemInstruction: "You are a world-class financial advisor AI. Provide professional, concise, and insightful advice. Respond in English."
+    },
+    footer: {
+      desc: "The next generation of personal wealth management. Experience the power of AI to secure your future.",
+      platform: "Platform",
+      company: "Company",
+      pricing: "Pricing",
+      integrations: "Integrations",
+      security: "Security",
+      api: "API Reference",
+      about: "About Us",
+      blog: "Blog",
+      careers: "Careers",
+      press: "Press",
+      newsletter: "Join our Newsletter",
+      newsletterSub: "Get the latest fintech insights directly in your inbox.",
+      newsletterBtn: "Join",
+      emailPlaceholder: "Email address",
+      rights: "© 2026 SmartFinance AI Inc. All rights reserved.",
+      privacy: "Privacy Policy",
+      terms: "Terms of Service",
+      cookies: "Cookie Settings"
+    },
+    mockup: {
+      balance: "Total Balance",
+      income: "Income",
+      expenses: "Expenses",
+      recent: "Recent Transactions",
+      viewAll: "View All",
+      ready: "AI Insights Ready",
+      transactions: [
+        { name: 'Apple Store', date: 'Oct 24, 2024', amount: '-$1,299.00', category: 'Tech' },
+        { name: 'Starbucks', date: 'Oct 23, 2024', amount: '-$24.50', category: 'Food' },
+        { name: 'McDonald\'s', date: 'Oct 22, 2024', amount: '-$32.90', category: 'Food' },
+      ]
+    },
+    months: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul"],
+    auth: {
+      welcomeBack: "Welcome Back",
+      createAccount: "Create Account",
+      loginSubtitle: "Enter your credentials to access your wealth.",
+      registerSubtitle: "Start your journey to financial freedom.",
+      fullName: "Full Name",
+      email: "Email Address",
+      password: "Password",
+      signIn: "Sign In",
+      createAccountBtn: "Create Account",
+      orContinue: "Or continue with",
+      dontHaveAccount: "Don't have an account?",
+      alreadyHaveAccount: "Already have an account?",
+      signUpLink: "Sign up",
+      signInLink: "Sign in",
+      appleComingSoon: "Apple Sign-In coming soon",
+      loginNotImplemented: "Login is not implemented yet in this version.",
+      errors: {
+        INVALID_FIELDS: "Please check all fields.",
+        EMAIL_IN_USE: "This email is already registered.",
+        NO_USER_ID: "User ID not found.",
+        INVALID_DATA: "Invalid form data.",
+        PROFILE_CREATION_ERROR: "An error occurred while creating your profile.",
+        REGISTRATION_FAILED: "Registration failed. Please try again.",
+        INVALID_CREDENTIALS: "Invalid email or password.",
+        USER_NOT_FOUND: "User not found.",
+        LOGIN_FAILED: "Login failed. Please try again.",
+        NAME_REQUIRED: "Name is required.",
+        NAME_TOO_SHORT: "Name must be at least 2 characters.",
+        EMAIL_REQUIRED: "Email is required.",
+        INVALID_EMAIL: "Please enter a valid email address.",
+        PASSWORD_REQUIRED: "Password is required.",
+        PASSWORD_TOO_SHORT: "Password must be at least 8 characters.",
+        PASSWORD_NO_UPPERCASE: "Password must contain at least one uppercase letter.",
+        PASSWORD_NO_NUMBER: "Password must contain at least one number."
+      }
+    }
+  },
+  tr: {
+    nav: {
+      features: "Özellikler",
+      performance: "Performans",
+      insights: "Yapay Zeka Analizi",
+      login: "Giriş Yap",
+      getStarted: "Başlayın"
+    },
+    hero: {
+      badge: "Yapay Zeka Finans v2.0",
+      headline: "Paranızı Yönetin:",
+      headlineAccent: "YZ Zekası ile",
+      subheadline: "Gider takibini otomatikleştirin, gerçek zamanlı finansal öngörüler alın ve dünyanın en gelişmiş YZ bütçe motoruyla servetinizi optimize edin.",
+      ctaPrimary: "Servet İnşasına Başla",
+      ctaSecondary: "Canlı Demoyu İzle",
+      rating: "4.9/5 Puan",
+      trusted: "50.000'den fazla kullanıcı güveniyor"
+    },
+    wizard: {
+      stepOf: "Adım {current}",
+      next: "İleri",
+      back: "Geri",
+      finish: "Paneline Git",
+      quit: "Çıkış",
+      step1: {
+        title: "Birincil hedefiniz nedir?",
+        goal1: "Büyük Bir Alım İçin Biriktir",
+        goal1Desc: "Ev, Araba veya Seyahat",
+        goal2: "Servetimi Büyüt",
+        goal2Desc: "Yatırım ve Portföy",
+        goal3: "Borç Yönetimi",
+        goal3Desc: "Bütçeleme ve Tasarruf"
+      },
+      step2: {
+        title: "Bireysel Profil",
+        age: "Yaşınız",
+        employment: "Çalışma Durumu",
+        empOptions: ["Çalışan", "Freelance", "Öğrenci", "İşletme Sahibi", "Emekli"],
+        income: "Yıllık Geliriniz",
+      },
+      step3: {
+        title: "Hanehalkı ve Aile",
+        marital: "Medeni Durum",
+        married: "Evli / Birliktelik",
+        single: "Bekar",
+        spouseWork: "Eşiniz çalışıyor mu?",
+        spouseIncome: "Eşinizin Yıllık Geliri",
+        yes: "Evet",
+        no: "Hayır"
+      },
+      step4: {
+        title: "Servet ve Varlıklar",
+        savings: "Toplam Likit Birikim",
+        assets: "Hangi varlıklara sahipsiniz?",
+        assetOptions: ["Nakit", "Hisse Senedi", "Kripto", "Altın/Değerli Maden", "Gayrimenkul", "Tahvil"],
+      },
+      step5: {
+        title: "YZ ve Risk Profili",
+        aiExp: "YZ araçlarıyla deneyiminiz?",
+        aiOptions: ["Yeni", "Tanıdık", "Uzman"],
+        risk: "Finansal Risk İştahı",
+        riskOptions: ["Muhafazakar", "Orta", "Agresif"]
+      },
+      step6: {
+        title: "Hesabınızı güvene alın.",
+        name: "Ad Soyad",
+        email: "E-posta Adresi",
+        password: "Şifre",
+        socialOr: "veya şununla kaydolun",
+        google: "Google",
+        apple: "Apple"
+      },
+      success: {
+        title: "Hesap Başarıyla Oluşturuldu!",
+        sub: "Yapay zekanız finansal DNA'nızı işliyor. Panelinize yönlendiriliyorsunuz...",
+      },
+      validationErrors: {
+        goal: "Lütfen bir finansal hedef seçiniz",
+        employment: "Lütfen çalışma durumunuzu seçiniz",
+        aiExp: "Lütfen yapay zeka deneyiminizi seçiniz",
+        risk: "Lütfen risk iştahınızı seçiniz"
+      }
+    },
+    features: {
+      sectionTitle: "Her İşlemde Zeka",
+      sectionSub: "Sizin kadar hızlı düşünen finansal yönetimi deneyimleyin. Gemini tarafından desteklenir, hedeflerinizle yönlendirilir.",
+      f1Title: "YZ Finansal Analizler",
+      f1Desc: "Özel modelimiz harcama kalıplarınızı analiz eder ve gerçek zamanlı optimizasyon stratejileri sunar.",
+      f2Title: "Akıllı Bütçeleme",
+      f2Desc: "Hedefler belirleyin ve YZ'nin günlük harçlıklarınızı dinamik olarak ayarlamasına izin verin.",
+      f3Title: "Tahmini Öngörü",
+      f3Desc: "Net varlığınızı %98 doğrulukla 12 ay sonrasına kadar görün.",
+      f4Title: "Banka Düzeyinde Güvenlik",
+      f4Desc: "256 bit şifreleme ve çok faktörlü biyometrik kimlik doğrulama.",
+      f5Title: "Küresel Bağlantı",
+      f5Desc: "150 ülkede 20.000'den fazla finansal kuruma anında bağlanın."
+    },
+    stats: {
+      badge: "Aktivite",
+      title: "Birikimlerinizin",
+      titleAccent: "Otomatik Büyümesini İzleyin",
+      desc: "SmartFinance AI her gün mikro tasarruf fırsatlarını belirler. Kullanıcılarımız yaşam tarzlarını değiştirmeden ayda ortalama 450 dolar tasarruf ediyor.",
+      avgRoi: "Ort. ROI",
+      users: "Kullanıcı",
+      chartTitle: "Öngörülen Büyüme ve Mevcut Harcama",
+      spending: "Harcama",
+      savings: "Birikim"
+    },
+    ai: {
+      badge: "Zekayı Deneyimleyin",
+      title: "Finans Danışmanınızla Konuşun",
+      sub: "Bütçeleme, yatırım stratejileri veya büyük hedefler için tasarruf hakkında sormayı deneyin.",
+      placeholder: "Örn: Ev peşinatı için nasıl daha fazla tasarruf edebilirim?",
+      another: "Başka bir soru sor",
+      magic: "YZ sihrini görmek için aşağıya bir soru yazın",
+      error: "YZ danışmanımız şu anda meşgul. Lütfen tekrar deneyin.",
+      tags: ["Düğün bütçesi", "1.000$ yatırım", "20 yıl sonra emeklilik", "Vergi optimizasyonu"],
+      systemInstruction: "Dünya çapında bir finansal danışman yapay zekasısınız. Profesyonel, özlü ve derinlikli tavsiyeler verin. Türkçe olarak yanıt verin."
+    },
+    footer: {
+      desc: "Yeni nesil kişisel servet yönetimi. Geleceğinizi güvence altına almak için YZ'nin gücünü deneyimleyin.",
+      platform: "Platform",
+      company: "Şirket",
+      pricing: "Fiyatlandırma",
+      integrations: "Entegrasyonlar",
+      security: "Güvenlik",
+      api: "API Referansı",
+      about: "Hakkımızda",
+      blog: "Blog",
+      careers: "Kariyer",
+      press: "Basın",
+      newsletter: "Bültenimize Katılın",
+      newsletterSub: "En son finansal teknoloji bilgilerini doğrudan gelen kutunuza alın.",
+      newsletterBtn: "Katıl",
+      emailPlaceholder: "E-posta adresi",
+      rights: "© 2024 SmartFinance AI Inc. Tüm hakları saklıdır.",
+      privacy: "Gizlilik Politikası",
+      terms: "Kullanım Koşulları",
+      cookies: "Çerez Ayarları"
+    },
+    mockup: {
+      balance: "Toplam Bakiye",
+      income: "Gelir",
+      expenses: "Giderler",
+      recent: "Son İşlemler",
+      viewAll: "Tümünü Gör",
+      ready: "YZ Analizi Hazır",
+      transactions: [
+        { name: 'Apple Store', date: '24 Eki 2024', amount: '-$1,299.00', category: 'Teknoloji' },
+        { name: 'Starbucks', date: '23 Eki 2024', amount: '-$24.50', category: 'Gıda' },
+        { name: 'McDonald\'s', date: '22 Eki 2024', amount: '-$32.90', category: 'Gıda' },
+      ]
+    },
+    months: ["Oca", "Şub", "Mar", "Nis", "May", "Haz", "Tem"],
+    auth: {
+      welcomeBack: "Tekrar Hoşgeldiniz",
+      createAccount: "Hesap Oluştur",
+      loginSubtitle: "Servetinize erişmek için bilgilerinizi girin.",
+      registerSubtitle: "Finansal özgürlük yolculuğunuza başlayın.",
+      fullName: "Ad Soyad",
+      email: "E-posta Adresi",
+      password: "Şifre",
+      signIn: "Giriş Yap",
+      createAccountBtn: "Hesap Oluştur",
+      orContinue: "veya şununla devam et",
+      dontHaveAccount: "Hesabınız yok mu?",
+      alreadyHaveAccount: "Zaten hesabınız var mı?",
+      signUpLink: "Kayıt Ol",
+      signInLink: "Giriş Yap",
+      appleComingSoon: "Apple ile giriş yakında eklenecek",
+      loginNotImplemented: "Giriş yapma özelliği bu sürümde henüz mevcut değil.",
+      errors: {
+        INVALID_FIELDS: "Lütfen tüm alanları kontrol ediniz.",
+        EMAIL_IN_USE: "Bu e-posta adresi zaten kullanımda.",
+        NO_USER_ID: "Kullanıcı kimliği bulunamadı.",
+        INVALID_DATA: "Form verileri geçersiz.",
+        PROFILE_CREATION_ERROR: "Profil oluşturulurken bir hata oluştu.",
+        REGISTRATION_FAILED: "Kayıt başarısız. Lütfen tekrar deneyin.",
+        INVALID_CREDENTIALS: "E-posta veya şifre hatalı.",
+        USER_NOT_FOUND: "Kullanıcı bulunamadı.",
+        LOGIN_FAILED: "Giriş başarısız. Lütfen tekrar deneyin.",
+        NAME_REQUIRED: "İsim gereklidir.",
+        NAME_TOO_SHORT: "İsim en az 2 karakter olmalıdır.",
+        EMAIL_REQUIRED: "E-posta gereklidir.",
+        INVALID_EMAIL: "Geçerli bir e-posta adresi giriniz.",
+        PASSWORD_REQUIRED: "Şifre gereklidir.",
+        PASSWORD_TOO_SHORT: "Şifre en az 8 karakter olmalıdır.",
+        PASSWORD_NO_UPPERCASE: "Şifre en az bir büyük harf içermelidir.",
+        PASSWORD_NO_NUMBER: "Şifre en az bir rakam içermelidir."
+      }
+    }
+  }
+};

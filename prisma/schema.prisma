@@ -1,0 +1,147 @@
+// prisma/schema.prisma
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DIRECT_URL")
+}
+
+// --- KULLANICI & AUTH (Değişmedi - Standart Yapı) ---
+// ... (previous content)
+
+// --- KULLANICI & AUTH (Değişmedi - Standart Yapı) ---
+model User {
+  id            String    @id @default(cuid())
+  name          String?
+  email         String    @unique
+  emailVerified DateTime?
+  image         String?
+  password      String?   // YENİ: Credentials flow için
+  accounts      Account[]
+  sessions      Session[]
+  expenses      Expense[]
+  budgets       Budget[]
+  profile       FinancialProfile? // YENİ: Finansal Profil
+  
+  hasCompletedOnboarding Boolean @default(false)
+
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+}
+
+// ... (Expense and Budget models remain same)
+
+// --- YENİ: FİNANSAL PROFİL (Registration Wizard Verileri) ---
+model FinancialProfile {
+  id        String   @id @default(cuid())
+  userId    String   @unique
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  // Step 1: Hedef
+  primaryAmbition String // 'save', 'grow', 'debt'
+
+  // Step 2: Bireysel Profil
+  age              Int
+  employmentStatus String
+  annualIncome     Decimal
+
+  // Step 3: Aile
+  maritalStatus      String  // 'single', 'married'
+  spouseEmployed     Boolean @default(false)
+  spouseAnnualIncome Decimal?
+
+  // Step 4: Varlıklar
+  totalLiquidSavings Decimal
+  assets             String[] // Postgres array desteği
+
+  // Step 5: AI & Risk
+  aiExperience String // 'Newbie', 'Familiar', 'Expert'
+  riskAppetite String // 'Conservative', 'Moderate', 'Aggressive'
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+// ... (Auth models)
+
+// --- GELİŞMİŞ HARCAMA MODELİ ---
+model Expense {
+  id          String   @id @default(cuid())
+  userId      String
+  
+  // Finansal Veri: Float yerine Decimal önerilir (Hassas hesaplama için)
+  // SQLite Decimal desteklemediği için Float kalabilir ama Postgres'e geçersen Decimal yapmalısın.
+  amount      Decimal    
+  currency    String   @default("TRY") // YENİ: Para birimi desteği
+  
+  description String
+  category    String   // Örn: "Market", "Ulaşım"
+  date        DateTime @default(now())
+  
+  // AI ve Kanıt Verileri
+  receiptUrl  String?  // Fiş görseli (Cloudinary/S3 linki)
+  isAiGenerated Boolean @default(false) // YENİ: Bu veri elle mi girildi, AI mı oluşturdu?
+  aiConfidence  Float?  // YENİ: AI'nın okuma güven skoru (0.0 - 1.0 arası)
+  
+  // İlişkiler
+  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@index([userId])
+  @@index([date]) // Tarih bazlı raporlar için index
+}
+
+// --- YENİ: BÜTÇE HEDEFLERİ ---
+// SmartFinance mantığı için harcamaları bir hedefle kıyaslaman gerekir.
+model Budget {
+  id        String   @id @default(cuid())
+  userId    String
+  category  String   // Hangi kategori için bütçe? (Örn: "Gıda")
+  limit     Decimal    // Aylık limit (Örn: 5000 TL)
+  period    String   @default("monthly") // monthly, yearly
+  
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, category]) // Bir kullanıcının aynı kategori için tek bütçesi olur
+}
+
+// --- AUTH MODELLERİ (Standart NextAuth) ---
+model Account {
+  id                 String  @id @default(cuid())
+  userId             String
+  type               String
+  provider           String
+  providerAccountId  String
+  refresh_token      String? 
+  access_token       String? 
+  expires_at         Int?
+  token_type         String?
+  scope              String?
+  id_token           String? 
+  session_state      String?
+ 
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+ 
+  @@unique([provider, providerAccountId])
+}
+ 
+model Session {
+  id           String   @id @default(cuid())
+  sessionToken String   @unique
+  userId       String
+  expires      DateTime
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+ 
+model VerificationToken {
+  identifier String
+  token      String   @unique
+  expires    DateTime
+ 
+  @@unique([identifier, token])
+}
