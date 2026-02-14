@@ -1,45 +1,49 @@
-// src/app/(dashboard)/layout.tsx
+"use client";
 
-import { auth } from "@/auth";
+import { useSession } from "next-auth/react";
 import { redirect } from "next/navigation";
+import Sidebar from "./components/Sidebar";
+import Topbar from "./components/Topbar";
+import { LanguageProvider } from "./context/language_context";
 
-export default async function DashboardLayout({
+export default function DashboardLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  const session = await auth();
+  const { data: session, status } = useSession();
 
-  // Oturum açmamış kullanıcıyı login sayfasına yönlendir (Güvenlik)
-  if (!session) {
+  if (status === "loading") {
+    return (
+      <div className="h-screen w-full bg-[#060608] flex items-center justify-center">
+        <div className="w-10 h-10 border-4 border-indigo-500/20 border-t-indigo-500 rounded-full animate-spin"></div>
+      </div>
+    );
+  }
+
+  if (status === "unauthenticated") {
     redirect("/api/auth/signin");
   }
 
   return (
-    <div className="flex h-screen bg-gray-100">
-      {/* Sidebar - Yan Menü */}
-      <aside className="w-64 bg-white border-r hidden md:block">
-        <div className="p-6">
-          <h2 className="text-xl font-bold text-blue-600">SmartFinance AI</h2>
+    <LanguageProvider>
+      <div className="flex h-screen bg-[#060608] text-slate-200 overflow-hidden font-inter">
+        <Sidebar userName={session?.user?.name} />
+        
+        <div className="flex-1 flex flex-col overflow-hidden relative">
+          <Topbar />
+          
+          <main className="flex-1 overflow-y-auto p-0 scroll-smooth">
+            {children}
+          </main>
         </div>
-        <nav className="mt-6 px-4 space-y-2">
-          <a href="/dashboard" className="block p-2 text-gray-700 hover:bg-blue-50 rounded">Özet</a>
-          <a href="/dashboard/expenses" className="block p-2 text-gray-700 hover:bg-blue-50 rounded">Harcamalar</a>
-          <a href="/dashboard/budgets" className="block p-2 text-gray-700 hover:bg-blue-50 rounded">Bütçeler</a>
-        </nav>
-      </aside>
 
-      {/* Ana İçerik Alanı */}
-      <main className="flex-1 overflow-y-auto p-8">
-        <header className="flex justify-between items-center mb-8">
-          <h1 className="text-2xl font-bold">Hoş geldin, {session.user?.name} 👋</h1>
-          <div className="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center">
-             {/* Kullanıcı baş harfi veya resmi */}
-             {session.user?.name?.charAt(0)}
-          </div>
-        </header>
-        {children}
-      </main>
-    </div>
+        {/* Floating Background Effects */}
+        <div className="fixed top-0 left-0 w-full h-full pointer-events-none -z-10 overflow-hidden">
+          <div className="absolute top-[10%] right-[10%] w-[30%] h-[30%] bg-indigo-500/5 blur-[120px] rounded-full"></div>
+          <div className="absolute bottom-[10%] left-[10%] w-[30%] h-[30%] bg-emerald-500/5 blur-[120px] rounded-full"></div>
+        </div>
+      </div>
+    </LanguageProvider>
   );
 }

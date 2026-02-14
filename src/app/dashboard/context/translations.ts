@@ -17,7 +17,8 @@ export const translations = {
         aiInsights: "AI Insights",
         budgets: "Budgets",
         investments: "Investments",
-        settings: "Settings"
+        settings: "Settings",
+        logout: "Logout"
       }
     },
   },
@@ -38,7 +39,8 @@ export const translations = {
         aiInsights: "YZ Analizleri",
         budgets: "Bütçeler",
         investments: "Yatırımlar",
-        settings: "Ayarlar"
+        settings: "Ayarlar",
+        logout: "Çıkış Yap"
       }
     },
   }
