@@ -8,10 +8,48 @@ const translations = {
   en: {
     welcome: "Welcome",
     login: "Login",
+    dashboard: {
+      sidebar: {
+        dashboard: "Dashboard",
+        transactions: "Transactions",
+        aiInsights: "AI Insights",
+        budgets: "Budgets",
+        investments: "Investments",
+        settings: "Settings",
+      },
+      search: "Search...",
+      netWorth: "Net Worth",
+      monthlyIncome: "Monthly Income",
+      monthlyExpenses: "Monthly Expenses",
+      aiAssistant: "AI Assistant",
+      aiWarning: "Your spending in 'Food' is 15% higher than last month. Consider reviewing your budget.",
+      viewRecs: "View Recommendations",
+      cashFlow: "Cash Flow",
+      recentActivity: "Recent Activity",
+    },
   },
   tr: {
     welcome: "Hoş Geldiniz",
     login: "Giriş Yap",
+    dashboard: {
+      sidebar: {
+        dashboard: "Panel",
+        transactions: "İşlemler",
+        aiInsights: "Yapay Zeka",
+        budgets: "Bütçeler",
+        investments: "Yatırımlar",
+        settings: "Ayarlar",
+      },
+      search: "Ara...",
+      netWorth: "Net Değer",
+      monthlyIncome: "Aylık Gelir",
+      monthlyExpenses: "Aylık Gider",
+      aiAssistant: "Yapay Zeka Asistanı",
+      aiWarning: "'Gıda' harcamalarınız geçen aya göre %15 daha yüksek. Bütçenizi gözden geçirmeyi düşünün.",
+      viewRecs: "Önerileri Gör",
+      cashFlow: "Nakit Akışı",
+      recentActivity: "Son Hareketler",
+    },
   }
 };
 
