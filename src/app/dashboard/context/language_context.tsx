@@ -1,8 +1,19 @@
 "use client";
 
-import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
+import React, { createContext, useContext, useState, ReactNode } from 'react';
 
 type Language = 'en' | 'tr';
+
+const translations = {
+  en: {
+    welcome: "Welcome",
+    login: "Login",
+  },
+  tr: {
+    welcome: "Hoş Geldiniz",
+    login: "Giriş Yap",
+  }
+};
 
 interface LanguageContextType {
   language: Language;
@@ -15,17 +26,10 @@ const LANGUAGE_STORAGE_KEY = 'smartfinance_language';
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
 export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
-  const [language, setLanguageState] = useState<Language>('en');
-  const [isHydrated, setIsHydrated] = useState(false);
-
-  // Client-side: localStorage'dan dil tercihini oku
-  useEffect(() => {
+  const [language, setLanguageState] = useState<Language>(() => {
     const savedLanguage = localStorage.getItem(LANGUAGE_STORAGE_KEY) as Language;
-    if (savedLanguage && (savedLanguage === 'en' || savedLanguage === 'tr')) {
-      setLanguageState(savedLanguage);
-    }
-    setIsHydrated(true);
-  }, []);
+    return (savedLanguage === 'en' || savedLanguage === 'tr') ? savedLanguage : 'en';
+  });
 
   // Dil değiştiğinde localStorage'a kaydet
   const setLanguage = (lang: Language) => {
